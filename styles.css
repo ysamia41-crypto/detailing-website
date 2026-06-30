@@ -17,61 +17,55 @@ body {
 
 /* ===== TOP BANNER ===== */
 .top-banner {
-  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.85fr 1.1fr;
+  align-items: stretch;
   height: 180px;
   background: #000;
   overflow: hidden;
   border-bottom: 1px solid rgba(175, 95, 255, 0.45);
 }
 
-.banner-left-glow {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 42%;
+.banner-left {
+  position: relative;
   background:
-    radial-gradient(circle at 18% 45%, rgba(180, 90, 255, 0.8), transparent 24%),
-    radial-gradient(circle at 7% 58%, rgba(103, 26, 199, 0.95), transparent 30%),
-    linear-gradient(90deg, rgba(120, 35, 220, 0.75), transparent 72%);
-  filter: blur(16px);
-  opacity: 0.95;
-}
-
-.banner-right-image {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 41%;
-  height: 100%;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.25)),
-    url("banner-car.png");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.75;
+    radial-gradient(circle at 12% 45%, rgba(202, 120, 255, 0.75), transparent 18%),
+    radial-gradient(circle at 20% 52%, rgba(123, 40, 236, 0.9), transparent 28%),
+    linear-gradient(90deg, rgba(85, 20, 170, 0.9), rgba(35, 0, 65, 0.75), #000 88%);
+  filter: blur(1px);
 }
 
 .banner-center {
-  position: absolute;
-  inset: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 4;
+  background: #000;
+  position: relative;
+  z-index: 3;
 }
 
 .banner-logo {
-  width: 380px;
-  max-width: 78%;
+  width: 360px;
+  max-width: 86%;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 18px rgba(180, 90, 255, 0.28));
+  filter: drop-shadow(0 0 16px rgba(180, 90, 255, 0.22));
+}
+
+.banner-right {
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.18)),
+    url("banner-car.png");
+  background-size: cover;
+  background-position: center;
 }
 
 /* ===== NAV ===== */
 .header {
   background: #000;
   border-bottom: 1px solid rgba(175, 95, 255, 0.35);
-  padding: 16px 6%;
+  padding: 15px 6%;
   position: relative;
   z-index: 20;
 }
@@ -80,7 +74,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 48px;
 }
 
 .nav a {
@@ -109,7 +103,7 @@ body {
 /* ===== HERO ===== */
 .hero {
   position: relative;
-  min-height: 410px;
+  min-height: 445px;
   background:
     url("https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=2200&q=80");
   background-size: cover;
@@ -117,15 +111,15 @@ body {
   border-bottom: 1px solid rgba(175, 95, 255, 0.3);
   display: flex;
   align-items: center;
-  padding: 55px 8%;
+  padding: 58px 7%;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0,0,0,0.92), rgba(0,0,0,0.68), rgba(0,0,0,0.22)),
-    linear-gradient(0deg, rgba(0,0,0,0.78), transparent 46%);
+    linear-gradient(90deg, rgba(0,0,0,0.94), rgba(0,0,0,0.68), rgba(0,0,0,0.18)),
+    linear-gradient(0deg, rgba(0,0,0,0.78), transparent 48%);
 }
 
 .hero-content {
@@ -144,12 +138,12 @@ body {
 }
 
 .hero-label {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .hero h1 {
   text-transform: uppercase;
-  font-size: 44px;
+  font-size: 46px;
   line-height: 0.98;
   font-weight: 900;
   margin-bottom: 18px;
@@ -163,7 +157,7 @@ body {
 .hero-text {
   color: #dedede;
   font-size: 17px;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 
 .hero-buttons,
@@ -227,15 +221,16 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background: #040006;
+  border-top: 1px solid rgba(175, 95, 255, 0.18);
   border-bottom: 1px solid rgba(175, 95, 255, 0.3);
-  padding: 24px 8%;
+  padding: 22px 7%;
 }
 
 .feature {
   display: grid;
-  grid-template-columns: 54px 1fr;
+  grid-template-columns: 56px 1fr;
   gap: 16px;
-  padding: 0 22px;
+  padding: 0 24px;
   border-right: 1px solid rgba(175, 95, 255, 0.22);
 }
 
@@ -250,7 +245,7 @@ body {
 
 .feature-icon {
   color: #b86bff;
-  font-size: 38px;
+  font-size: 36px;
   line-height: 1;
 }
 
@@ -267,7 +262,7 @@ body {
 
 /* ===== GENERAL SECTION ===== */
 .section {
-  padding: 32px 8%;
+  padding: 34px 7%;
   text-align: center;
 }
 
@@ -420,7 +415,7 @@ body {
 /* ===== BOOKING ===== */
 .booking-section {
   margin-top: 25px;
-  padding: 34px 15%;
+  padding: 34px 12%;
   background:
     radial-gradient(circle at 10% 50%, rgba(120, 40, 255, 0.45), transparent 28%),
     linear-gradient(90deg, #230034, #060008);
@@ -450,7 +445,7 @@ body {
 /* ===== FOOTER ===== */
 .footer {
   background: #000;
-  padding: 26px 10% 16px;
+  padding: 26px 8% 16px;
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr 1fr;
   gap: 30px;
@@ -490,6 +485,20 @@ body {
 
 /* ===== TABLET ===== */
 @media (max-width: 1050px) {
+  .top-banner {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .banner-left,
+  .banner-right {
+    display: none;
+  }
+
+  .banner-center {
+    padding: 28px 0;
+  }
+
   .feature-strip,
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -517,21 +526,15 @@ body {
 /* ===== MOBILE ===== */
 @media (max-width: 700px) {
   .top-banner {
-    height: 135px;
+    height: auto;
   }
 
-  .banner-left-glow {
-    width: 70%;
-    opacity: 0.85;
-  }
-
-  .banner-right-image {
-    width: 44%;
-    opacity: 0.38;
+  .banner-center {
+    padding: 24px 0;
   }
 
   .banner-logo {
-    width: 260px;
+    width: 250px;
   }
 
   .header {
