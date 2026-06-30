@@ -18,9 +18,9 @@ body {
   top: 0;
   width: 100%;
   z-index: 999;
-  background: rgba(5, 0, 8, 0.95);
-  border-bottom: 1px solid rgba(170, 80, 255, 0.35);
-  padding: 15px 6%;
+  background: rgba(5, 0, 8, 0.96);
+  border-bottom: 1px solid rgba(190, 95, 255, 0.4);
+  padding: 12px 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +29,7 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
   color: #fff;
   font-weight: 900;
@@ -37,26 +37,26 @@ body {
 }
 
 .brand img {
-  width: 58px;
-  height: 58px;
+  width: 95px;
+  height: 95px;
   object-fit: contain;
 }
 
 .brand span {
-  color: #ffffff;
+  font-size: 22px;
 }
 
 .nav a {
   color: #fff;
   text-decoration: none;
-  margin-left: 22px;
+  margin-left: 20px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
   text-transform: uppercase;
 }
 
 .nav a:hover {
-  color: #b75cff;
+  color: #c77dff;
 }
 
 .menu-btn {
@@ -64,28 +64,28 @@ body {
   background: none;
   color: white;
   border: none;
-  font-size: 30px;
+  font-size: 32px;
 }
 
 .hero {
   min-height: 100vh;
   background:
-    linear-gradient(rgba(10,0,20,.65), rgba(0,0,0,.94)),
+    linear-gradient(rgba(10,0,20,.55), rgba(0,0,0,.95)),
     url("https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
-  padding: 130px 6% 80px;
+  padding: 160px 6% 90px;
 }
 
 .hero-content {
-  max-width: 780px;
+  max-width: 850px;
 }
 
 .eyebrow,
 .label {
-  color: #b75cff;
+  color: #c77dff;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: bold;
@@ -93,15 +93,15 @@ body {
 }
 
 .hero h1 {
-  font-size: 78px;
+  font-size: 86px;
   line-height: 1;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 18px;
 }
 
-.hero p {
-  color: #ddd;
-  font-size: 22px;
+.slogan {
+  font-size: 30px;
+  color: #fff;
   margin-bottom: 30px;
 }
 
@@ -115,31 +115,31 @@ body {
 }
 
 .btn {
-  background: linear-gradient(135deg, #7b2cff, #c77dff);
+  background: linear-gradient(135deg, #6f2cff, #c77dff);
   color: white;
   padding: 15px 26px;
-  box-shadow: 0 0 25px rgba(183, 92, 255, 0.35);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(199, 125, 255, 0.35);
 }
 
 .btn-outline {
   color: white;
-  border: 1px solid #b75cff;
-  padding: 12px 20px;
+  border: 1px solid #c77dff;
+  padding: 13px 22px;
 }
 
 .btn-outline:hover {
-  background: #7b2cff;
+  background: #6f2cff;
 }
 
-.section {
-  padding: 85px 6%;
+.mobile-highlight {
+  padding: 70px 6%;
   text-align: center;
+  background: #0d0017;
+  border-top: 1px solid rgba(199,125,255,.25);
+  border-bottom: 1px solid rgba(199,125,255,.25);
 }
 
+.mobile-highlight h2,
 .section h2,
 .booking h2 {
   font-size: 44px;
@@ -147,18 +147,16 @@ body {
   margin-bottom: 18px;
 }
 
-.about {
-  background: #0b0012;
-  text-align: left;
-}
-
-.about-text {
+.mobile-highlight p {
   max-width: 850px;
+  margin: auto;
+  color: #ddd;
+  font-size: 20px;
 }
 
-.about p {
-  color: #ddd;
-  margin-bottom: 14px;
+.section {
+  padding: 85px 6%;
+  text-align: center;
 }
 
 .service-grid,
@@ -175,11 +173,11 @@ body {
 
 .card,
 .price-card {
-  background: linear-gradient(180deg, #12001f, #07000d);
-  border: 1px solid rgba(183, 92, 255, 0.3);
+  background: linear-gradient(180deg, #130020, #07000d);
+  border: 1px solid rgba(199, 125, 255, 0.3);
   padding: 30px;
   text-align: left;
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 .card h3,
@@ -192,7 +190,8 @@ body {
 .card p,
 .subtext,
 .booking p,
-.contact p {
+.contact p,
+.about p {
   color: #d5d5d5;
 }
 
@@ -224,31 +223,30 @@ body {
 
 .price-card li {
   margin: 10px 0;
-  color: #eee;
 }
 
 .price-card li::before {
   content: "✦";
-  color: #b75cff;
+  color: #c77dff;
   margin-right: 8px;
 }
 
 .featured {
-  border: 2px solid #b75cff;
-  box-shadow: 0 0 35px rgba(183, 92, 255, 0.25);
+  border: 2px solid #c77dff;
+  box-shadow: 0 0 35px rgba(199, 125, 255, 0.28);
 }
 
 .tag {
-  background: #7b2cff;
+  background: #6f2cff;
   padding: 10px;
   margin: -30px -30px 20px;
-  border-radius: 12px 12px 0 0;
+  border-radius: 14px 14px 0 0;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .gallery {
-  background: #0b0012;
+  background: #0d0017;
 }
 
 .gallery-grid {
@@ -256,26 +254,26 @@ body {
 }
 
 .gallery-img {
-  min-height: 320px;
+  min-height: 330px;
   border-radius: 18px;
-  border: 1px solid rgba(183, 92, 255, 0.35);
+  border: 1px solid rgba(199, 125, 255, 0.35);
   background-size: cover;
   background-position: center;
 }
 
 .img1 {
-  background-image: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.7)),
+  background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.75)),
   url("https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=900&q=80");
 }
 
 .img2 {
-  background-image: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.7)),
-  url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80");
+  background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.75)),
+  url("https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=900&q=80");
 }
 
 .img3 {
-  background-image: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.7)),
-  url("https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80");
+  background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.75)),
+  url("https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80");
 }
 
 .booking {
@@ -289,25 +287,42 @@ body {
 }
 
 .booking p {
-  max-width: 750px;
+  max-width: 800px;
   margin: 0 auto 30px;
   font-size: 19px;
+}
+
+.booking-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .contact {
   background: #050008;
 }
 
+.about {
+  background: #0d0017;
+}
+
+.about p {
+  max-width: 760px;
+  margin: auto;
+  font-size: 18px;
+}
+
 footer {
   background: #000;
-  border-top: 1px solid rgba(183, 92, 255, 0.3);
+  border-top: 1px solid rgba(199, 125, 255, 0.3);
   text-align: center;
   padding: 30px;
   color: #aaa;
 }
 
 footer img {
-  width: 80px;
+  width: 110px;
   margin-bottom: 10px;
 }
 
@@ -334,10 +349,23 @@ footer img {
 }
 
 @media (max-width: 750px) {
+  .header {
+    padding: 10px 5%;
+  }
+
+  .brand img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .brand span {
+    font-size: 14px;
+  }
+
   .nav {
     display: none;
     position: absolute;
-    top: 88px;
+    top: 96px;
     left: 0;
     width: 100%;
     background: #050008;
@@ -357,20 +385,17 @@ footer img {
     display: block;
   }
 
-  .brand span {
-    font-size: 14px;
-  }
-
   .hero h1 {
-    font-size: 44px;
+    font-size: 46px;
   }
 
-  .hero p {
-    font-size: 18px;
+  .slogan {
+    font-size: 22px;
   }
 
   .section h2,
-  .booking h2 {
+  .booking h2,
+  .mobile-highlight h2 {
     font-size: 32px;
   }
 
