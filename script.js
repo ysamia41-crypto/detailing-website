@@ -6,7 +6,7 @@ menuBtn.addEventListener("click", () => {
 });
 
 const sections = document.querySelectorAll(
-  ".section, .booking, .feature-strip"
+  ".feature-strip, .section, .booking"
 );
 
 sections.forEach((section) => {
@@ -17,7 +17,7 @@ window.addEventListener("scroll", () => {
   sections.forEach((section) => {
     const top = section.getBoundingClientRect().top;
 
-    if (top < window.innerHeight - 100) {
+    if (top < window.innerHeight - 90) {
       section.classList.add("active");
     }
   });
