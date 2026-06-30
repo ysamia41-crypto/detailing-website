@@ -18,9 +18,10 @@ body {
   top: 0;
   width: 100%;
   z-index: 999;
-  background: rgba(5, 0, 8, 0.96);
-  border-bottom: 1px solid rgba(190, 95, 255, 0.4);
-  padding: 12px 6%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(199, 125, 255, 0.35);
+  padding: 20px 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,27 +30,23 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: 900;
-  text-transform: uppercase;
 }
 
-.brand img {
-  width: 95px;
-  height: 95px;
+.main-logo {
+  width: 220px;
+  height: auto;
   object-fit: contain;
+  transition: 0.3s ease;
 }
 
-.brand span {
-  font-size: 22px;
+.main-logo:hover {
+  transform: scale(1.03);
 }
 
 .nav a {
   color: #fff;
   text-decoration: none;
-  margin-left: 20px;
+  margin-left: 22px;
   font-weight: bold;
   font-size: 13px;
   text-transform: uppercase;
@@ -68,41 +65,66 @@ body {
 }
 
 .hero {
+  position: relative;
   min-height: 100vh;
   background:
-    linear-gradient(rgba(10,0,20,.55), rgba(0,0,0,.95)),
-    url("https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1600&q=80");
+    url("https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=2200&q=80");
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
-  padding: 160px 6% 90px;
+  padding: 260px 6% 120px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(5, 0, 15, 0.68), rgba(0, 0, 0, 0.92));
 }
 
 .hero-content {
-  max-width: 850px;
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  animation: fadeUp 1.2s ease;
 }
 
-.eyebrow,
+.hero-tag,
 .label {
   color: #c77dff;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: bold;
-  margin-bottom: 14px;
-}
-
-.hero h1 {
-  font-size: 86px;
-  line-height: 1;
-  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
   margin-bottom: 18px;
 }
 
-.slogan {
-  font-size: 30px;
-  color: #fff;
+.hero h1 {
+  font-size: 105px;
+  line-height: 0.9;
+  font-weight: 900;
+  text-transform: uppercase;
   margin-bottom: 30px;
+  color: white;
+  text-shadow: 0 0 25px rgba(199, 125, 255, 0.25);
+}
+
+.hero h1 span {
+  color: #c77dff;
+}
+
+.hero-description {
+  color: #d5d5d5;
+  font-size: 23px;
+  line-height: 1.7;
+  max-width: 650px;
+  margin-bottom: 42px;
+}
+
+.hero-buttons,
+.booking-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 .btn,
@@ -127,16 +149,20 @@ body {
   padding: 13px 22px;
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+}
+
 .btn-outline:hover {
   background: #6f2cff;
 }
 
 .mobile-highlight {
-  padding: 70px 6%;
+  padding: 75px 6%;
   text-align: center;
   background: #0d0017;
-  border-top: 1px solid rgba(199,125,255,.25);
-  border-bottom: 1px solid rgba(199,125,255,.25);
+  border-top: 1px solid rgba(199, 125, 255, 0.25);
+  border-bottom: 1px solid rgba(199, 125, 255, 0.25);
 }
 
 .mobile-highlight h2,
@@ -262,25 +288,28 @@ body {
 }
 
 .img1 {
-  background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.75)),
-  url("https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=900&q=80");
+  background-image:
+    linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=900&q=80");
 }
 
 .img2 {
-  background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.75)),
-  url("https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=900&q=80");
+  background-image:
+    linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80");
 }
 
 .img3 {
-  background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.75)),
-  url("https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80");
+  background-image:
+    linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.75)),
+    url("https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80");
 }
 
 .booking {
   padding: 90px 6%;
   text-align: center;
   background:
-    linear-gradient(rgba(45,0,75,.88), rgba(0,0,0,.96)),
+    linear-gradient(rgba(45, 0, 75, 0.88), rgba(0, 0, 0, 0.96)),
     url("https://images.unsplash.com/photo-1603386329225-868f9b1ee6c9?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
   background-position: center;
@@ -293,10 +322,7 @@ body {
 }
 
 .booking-buttons {
-  display: flex;
-  gap: 15px;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .contact {
@@ -322,7 +348,7 @@ footer {
 }
 
 footer img {
-  width: 110px;
+  width: 140px;
   margin-bottom: 10px;
 }
 
@@ -337,6 +363,18 @@ footer img {
   transform: translateY(0);
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 1150px) {
   .pricing-grid,
   .service-grid {
@@ -346,26 +384,25 @@ footer img {
   .gallery-grid {
     grid-template-columns: 1fr;
   }
+
+  .hero h1 {
+    font-size: 78px;
+  }
 }
 
 @media (max-width: 750px) {
   .header {
-    padding: 10px 5%;
+    padding: 12px 5%;
   }
 
-  .brand img {
-    width: 75px;
-    height: 75px;
-  }
-
-  .brand span {
-    font-size: 14px;
+  .main-logo {
+    width: 150px;
   }
 
   .nav {
     display: none;
     position: absolute;
-    top: 96px;
+    top: 105px;
     left: 0;
     width: 100%;
     background: #050008;
@@ -385,12 +422,16 @@ footer img {
     display: block;
   }
 
-  .hero h1 {
-    font-size: 46px;
+  .hero {
+    padding: 190px 5% 90px;
   }
 
-  .slogan {
-    font-size: 22px;
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-description {
+    font-size: 18px;
   }
 
   .section h2,
