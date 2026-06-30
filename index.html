@@ -8,13 +8,16 @@
 </head>
 <body>
 
-  <!-- TOP LOGO BANNER -->
+  <!-- TOP BANNER -->
   <section class="top-banner">
-    <div class="banner-glow"></div>
-    <img src="logo.jpeg" alt="SoSlow Detailing Logo" class="banner-logo" />
+    <div class="banner-left-glow"></div>
+    <div class="banner-right-image"></div>
+    <div class="banner-center">
+      <img src="logo.jpeg" alt="SoSlow Detailing Logo" class="banner-logo" />
+    </div>
   </section>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <header class="header">
     <button class="menu-btn" id="menuBtn">☰</button>
 
@@ -29,11 +32,11 @@
   </header>
 
   <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-dark"></div>
+  <section class="hero">
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <p class="eyebrow">Houston Mobile Detailing</p>
+      <p class="section-label hero-label">Houston Mobile Detailing</p>
 
       <h1>
         Progression
@@ -41,7 +44,8 @@
       </h1>
 
       <p class="hero-text">
-        Mobile detailing focused on patience, quality, and clean results.<br />
+        Mobile detailing focused on patience,<br>
+        quality, and clean results.<br>
         Book online and we come to your location.
       </p>
 
@@ -56,7 +60,7 @@
   <section class="feature-strip">
     <div class="feature">
       <div class="feature-icon">⌖</div>
-      <div>
+      <div class="feature-text-wrap">
         <h3>We Come To You</h3>
         <p>Mobile service at your home, work, or any convenient location.</p>
       </div>
@@ -64,7 +68,7 @@
 
     <div class="feature">
       <div class="feature-icon">⬟</div>
-      <div>
+      <div class="feature-text-wrap">
         <h3>Quality Focused</h3>
         <p>We take our time to deliver high-quality results your vehicle deserves.</p>
       </div>
@@ -72,7 +76,7 @@
 
     <div class="feature">
       <div class="feature-icon">✦</div>
-      <div>
+      <div class="feature-text-wrap">
         <h3>Details Matter</h3>
         <p>Every detail. Every time. That’s the SoSlow difference.</p>
       </div>
@@ -80,7 +84,7 @@
 
     <div class="feature">
       <div class="feature-icon">▣</div>
-      <div>
+      <div class="feature-text-wrap">
         <h3>Easy Booking</h3>
         <p>Book online in minutes through Calendly. Simple and convenient.</p>
       </div>
@@ -88,7 +92,7 @@
   </section>
 
   <!-- SERVICES -->
-  <section id="services" class="section services">
+  <section id="services" class="section">
     <p class="section-label">Services</p>
     <h2>Mobile Detailing Services</h2>
 
@@ -120,7 +124,7 @@
   </section>
 
   <!-- PRICING -->
-  <section id="pricing" class="section pricing">
+  <section id="pricing" class="section pricing-section">
     <p class="section-label">Pricing</p>
     <h2>Choose Your Mobile Detail</h2>
 
@@ -129,10 +133,10 @@
         <h3>Express Refresh</h3>
         <p class="price">$79</p>
         <ul>
-          <li>Exterior hand wash</li>
-          <li>Tire shine</li>
-          <li>Interior vacuum</li>
-          <li>Windows cleaned</li>
+          <li>Exterior Hand Wash</li>
+          <li>Tire Shine</li>
+          <li>Interior Vacuum</li>
+          <li>Windows Cleaned</li>
         </ul>
         <a href="https://calendly.com/samiasdetailing/express-refresh" target="_blank" class="small-btn">Book Now</a>
       </div>
@@ -141,10 +145,10 @@
         <h3>Interior Detail</h3>
         <p class="price">$149</p>
         <ul>
-          <li>Deep vacuum</li>
-          <li>Door panels</li>
-          <li>Cup holders & vents</li>
-          <li>Interior windows</li>
+          <li>Deep Vacuum</li>
+          <li>Door Panels</li>
+          <li>Cup Holders & Vents</li>
+          <li>Interior Windows</li>
         </ul>
         <a href="https://calendly.com/samiasdetailing/interior-detail" target="_blank" class="small-btn">Book Now</a>
       </div>
@@ -153,10 +157,10 @@
         <h3>Exterior Detail</h3>
         <p class="price">$129</p>
         <ul>
-          <li>Hand wash</li>
-          <li>Wheel cleaning</li>
-          <li>Tire dressing</li>
-          <li>Spray wax</li>
+          <li>Hand Wash</li>
+          <li>Wheel Cleaning</li>
+          <li>Tire Dressing</li>
+          <li>Spray Wax</li>
         </ul>
         <a href="https://calendly.com/samiasdetailing/exterior-detail" target="_blank" class="small-btn">Book Now</a>
       </div>
@@ -166,10 +170,10 @@
         <h3>Full Detail</h3>
         <p class="price">$229</p>
         <ul>
-          <li>Interior detail included</li>
-          <li>Exterior detail included</li>
-          <li>Mat cleaning</li>
-          <li>Light stain treatment</li>
+          <li>Interior Detail Included</li>
+          <li>Exterior Detail Included</li>
+          <li>Mat Cleaning</li>
+          <li>Light Stain Treatment</li>
         </ul>
         <a href="https://calendly.com/samiasdetailing/full-detail" target="_blank" class="small-btn filled">Book Now</a>
       </div>
@@ -179,77 +183,83 @@
         <p class="price">$349</p>
         <ul>
           <li>Everything in Full Detail</li>
-          <li>Clay bar treatment</li>
-          <li>Paint decontamination</li>
-          <li>Premium sealant</li>
+          <li>Clay Bar Treatment</li>
+          <li>Paint Decontamination</li>
+          <li>Premium Sealant</li>
         </ul>
         <a href="https://calendly.com/samiasdetailing/premium-detail" target="_blank" class="small-btn">Book Now</a>
       </div>
     </div>
 
-    <p class="price-note">Starting prices. Final pricing may vary by vehicle size and condition.</p>
+    <p class="price-note">
+      Starting prices. Final pricing may vary by vehicle size and condition.
+    </p>
   </section>
 
   <!-- CARS -->
-  <section id="cars" class="section cars">
+  <section id="cars" class="section cars-section">
     <p class="section-label">Cars</p>
     <h2>Vehicles We Love To Detail</h2>
 
     <div class="cars-grid">
-      <div class="car car-one"></div>
-      <div class="car car-two"></div>
-      <div class="car car-three"></div>
+      <div class="car-card car-one"></div>
+      <div class="car-card car-two"></div>
+      <div class="car-card car-three"></div>
     </div>
 
     <a href="#services" class="small-btn cars-btn">View All Services</a>
   </section>
 
   <!-- BOOKING -->
-  <section id="booking" class="booking">
-    <div class="booking-text">
+  <section id="booking" class="booking-section">
+    <div class="booking-left">
       <p class="section-label">Booking</p>
       <h2>Ready To Book?</h2>
       <p>
-        Choose your service, select a time, enter your location, and we’ll handle the rest.
+        Choose your service, select a time, enter your location,<br>
+        and we’ll handle the rest.
       </p>
     </div>
 
-    <div class="booking-actions">
+    <div class="booking-right">
       <a href="https://calendly.com/samiasdetailing" target="_blank" class="btn">View All Options</a>
       <a href="https://calendly.com/samiasdetailing/full-detail" target="_blank" class="btn-outline">Book Full Detail</a>
     </div>
   </section>
 
-  <!-- FOOTER / CONTACT -->
+  <!-- FOOTER -->
   <footer id="contact" class="footer">
-    <div class="footer-logo">
-      <img src="logo.jpeg" alt="SoSlow Detailing Logo" />
+    <div class="footer-logo-wrap">
+      <img src="logo.jpeg" alt="SoSlow Detailing Logo" class="footer-logo" />
     </div>
 
-    <div>
+    <div class="footer-col">
       <h4>Service Area</h4>
       <p>Houston, TX</p>
       <p>and surrounding areas</p>
     </div>
 
-    <div>
+    <div class="footer-col">
       <h4>Follow Us</h4>
       <p>TikTok: @SoSlowDetailing</p>
       <p>More platforms coming soon</p>
     </div>
 
-    <div>
+    <div class="footer-col">
       <h4>Contact</h4>
       <p>Booking through Calendly</p>
       <p>Contact number coming soon</p>
     </div>
   </footer>
 
-  <section id="about" class="about">
+  <section id="about" class="bottom-bar">
     <p>© 2026 SoSlow Detailing. All rights reserved.</p>
-    <p class="about-text">About Me: My name is Tre'main, founder of SoSlow Detailing. More about our story coming soon.</p>
+    <p class="about-text">
+      About Me: My name is Tre'main, founder of SoSlow Detailing. More about our story coming soon.
+    </p>
   </section>
 
   <script src="script.js"></script>
 </body>
 </html>
+
