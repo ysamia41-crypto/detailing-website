@@ -5,9 +5,7 @@ menuBtn.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
 
-const sections = document.querySelectorAll(
-  ".section, .intro, .addons, .why, .cta"
-);
+const sections = document.querySelectorAll(".section, .booking");
 
 sections.forEach((section) => {
   section.classList.add("reveal");
@@ -15,10 +13,8 @@ sections.forEach((section) => {
 
 window.addEventListener("scroll", () => {
   sections.forEach((section) => {
-    const sectionTop = section.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight - 100;
-
-    if (sectionTop < screenPosition) {
+    const top = section.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
       section.classList.add("active");
     }
   });
