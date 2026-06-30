@@ -5,7 +5,7 @@ menuBtn.addEventListener("click", () => {
   nav.classList.toggle("active");
 });
 
-const sections = document.querySelectorAll(".section, .booking");
+const sections = document.querySelectorAll(".section, .booking, .mobile-highlight");
 
 sections.forEach((section) => {
   section.classList.add("reveal");
