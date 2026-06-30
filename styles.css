@@ -21,7 +21,7 @@ body {
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(15px);
   border-bottom: 1px solid rgba(199, 125, 255, 0.35);
-  padding: 20px 6%;
+  padding: 30px 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +33,7 @@ body {
 }
 
 .main-logo {
-  width: 300px;
+  width: 350px;
   height: auto;
   object-fit: contain;
   transition: 0.3s ease;
