@@ -827,3 +827,16 @@ body {
     width: 280px;
   }
 }
+/* ===== BLANK ABOUT SECTION ===== */
+.about-placeholder {
+  background: #050008;
+}
+
+.blank-about-box {
+  min-height: 180px;
+  max-width: 900px;
+  margin: 20px auto 0;
+  border: 1px solid rgba(175, 95, 255, 0.25);
+  background: linear-gradient(180deg, #0d0015, #050008);
+  border-radius: 6px;
+}
