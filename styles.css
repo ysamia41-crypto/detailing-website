@@ -873,3 +873,58 @@ body {
     font-size: 16px;
   }
 }
+/* ===== MAKE PRICING CARDS FIT BETTER ===== */
+.pricing-grid {
+  max-width: 1250px;
+  margin: 18px auto 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.price-card {
+  min-height: 245px;
+  padding: 18px 16px;
+}
+
+.price-card h3 {
+  font-size: 13px;
+}
+
+.price {
+  font-size: 32px;
+  margin: 6px 0 14px;
+}
+
+.price-card li {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.price-card .small-btn {
+  margin-top: 8px;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 950px;
+  }
+}
+
+/* Small tablet */
+@media (max-width: 850px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 650px;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+  }
+}
