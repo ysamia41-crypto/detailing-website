@@ -928,3 +928,52 @@ body {
     max-width: 380px;
   }
 }
+/* ===== KEEP PACKAGE CARDS SAME SIZE ===== */
+.pricing-grid {
+  max-width: 1250px;
+  margin: 18px auto 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.price-card {
+  min-height: 285px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-card ul {
+  flex-grow: 1;
+}
+
+.price-card .small-btn {
+  align-self: center;
+  margin-top: auto;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 850px;
+  }
+
+  .price-card {
+    min-height: 285px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+  }
+
+  .price-card {
+    min-height: 285px;
+    width: 100%;
+  }
+}
