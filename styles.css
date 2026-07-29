@@ -977,3 +977,15 @@ body {
     width: 100%;
   }
 }
+.footer-col a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-col a:visited {
+  color: #ffffff;
+}
+
+.footer-col a:hover {
+  color: #b86bff;
+}
