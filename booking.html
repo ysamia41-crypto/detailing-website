@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book | SoSlow Detailing</title>
+  <meta name="description" content="Book your SoSlow Detailing appointment online." />
+  <style>
+    :root {
+      --bg: #08090b;
+      --card: #111318;
+      --card-2: #171a21;
+      --text: #ffffff;
+      --muted: #a9afbb;
+      --accent: #8b5cf6;
+      --accent-2: #a78bfa;
+      --border: rgba(255,255,255,.10);
+      --success: #3ddc97;
+      --danger: #ff6b6b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #17112a 0%, var(--bg) 38%);
+      color: var(--text);
+    }
+
+    a { color: inherit; }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      text-decoration: none;
+    }
+
+    .back-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-link:hover { color: var(--text); }
+
+    .booking-shell {
+      display: grid;
+      grid-template-columns: 0.9fr 1.25fr;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(17, 19, 24, .94);
+      box-shadow: 0 26px 90px rgba(0,0,0,.34);
+    }
+
+    .summary {
+      padding: clamp(24px, 4vw, 42px);
+      border-right: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(139,92,246,.12), transparent 45%);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent-2);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+
+    .summary > p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 30px;
+    }
+
+    .selected-box {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .selected-box strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .selected-meta,
+    .small-note {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .steps {
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    .section { margin-bottom: 34px; }
+    .section:last-child { margin-bottom: 0; }
+
+    .section-title {
+      margin: 0 0 14px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .service-btn,
+    .time-btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--card-2);
+      color: var(--text);
+      cursor: pointer;
+      transition: .18s ease;
+    }
+
+    .service-btn {
+      min-height: 92px;
+      padding: 16px;
+      border-radius: 15px;
+      text-align: left;
+    }
+
+    .service-btn:hover,
+    .service-btn.active,
+    .time-btn:hover,
+    .time-btn.active {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 0 0 1px rgba(139,92,246,.25) inset;
+    }
+
+    .service-btn.active,
+    .time-btn.active {
+      background: rgba(139,92,246,.15);
+    }
+
+    .service-name {
+      display: block;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .service-price {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      color: #dfe3eb;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 13px 14px;
+      background: #0c0e13;
+      color: var(--text);
+      outline: none;
+      font: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(139,92,246,.12);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .times {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 10px;
+    }
+
+    .time-btn {
+      border-radius: 11px;
+      padding: 12px 8px;
+      font-weight: 700;
+    }
+
+    .empty,
+    .loading {
+      grid-column: 1 / -1;
+      color: var(--muted);
+      padding: 10px 0;
+      font-size: 14px;
+    }
+
+    .book-btn {
+      width: 100%;
+      margin-top: 16px;
+      border: 0;
+      border-radius: 13px;
+      padding: 15px 18px;
+      background: linear-gradient(135deg, var(--accent), #6d28d9);
+      color: #fff;
+      font-weight: 900;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .book-btn:hover { filter: brightness(1.07); }
+    .book-btn:disabled { opacity: .55; cursor: not-allowed; }
+
+    .message {
+      display: none;
+      margin-top: 14px;
+      padding: 13px 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .message.show { display: block; }
+    .message.success { background: rgba(61,220,151,.11); color: #bff4d8; border: 1px solid rgba(61,220,151,.28); }
+    .message.error { background: rgba(255,107,107,.10); color: #ffc7c7; border: 1px solid rgba(255,107,107,.25); }
+
+    .required { color: var(--accent-2); }
+
+    @media (max-width: 820px) {
+      .booking-shell { grid-template-columns: 1fr; }
+      .summary { border-right: 0; border-bottom: 1px solid var(--border); }
+    }
+
+    @media (max-width: 560px) {
+      .page { width: min(100% - 20px, 1120px); padding-top: 18px; }
+      .topbar { margin-bottom: 18px; }
+      .booking-shell { border-radius: 18px; }
+      .service-grid, .field-grid { grid-template-columns: 1fr; }
+      .times { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .summary, .steps { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topbar">
+      <a class="brand" href="/">SoSlow Detailing</a>
+      <a class="back-link" href="/">← Back to website</a>
+    </div>
+
+    <div class="booking-shell">
+      <aside class="summary">
+        <p class="eyebrow">Online Booking</p>
+        <h1>Book your detail.</h1>
+        <p>Choose a service, select an available time, and your appointment will be placed directly on the SoSlow Detailing calendar.</p>
+
+        <div class="selected-box">
+          <strong id="summaryService">Choose a service</strong>
+          <div class="selected-meta" id="summaryPrice">Select an option to begin.</div>
+          <ul id="summaryDetails" class="selected-meta" style="padding-left:18px; margin:12px 0 0;"></ul>
+          <div class="selected-meta" id="summaryWhen" style="margin-top:12px; font-weight:700; color:#fff;"></div>
+        </div>
+
+        <p class="small-note" style="margin-top:18px;">
+          Appointment times are shown in Central Time. Final pricing may vary based on vehicle size, pet hair, stains, odors, or overall vehicle condition.
+        </p>
+      </aside>
+
+      <section class="steps">
+        <div class="section">
+          <h2 class="section-title">1. Choose a service</h2>
+          <div class="service-grid" id="serviceGrid"></div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">2. Choose a date</h2>
+          <div>
+            <label for="bookingDate">Date <span class="required">*</span></label>
+            <input id="bookingDate" type="date" />
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">3. Pick an available time</h2>
+          <div class="times" id="times">
+            <div class="empty">Select a service and date to see available times.</div>
+          </div>
+        </div>
+
+        <form id="bookingForm">
+          <div class="section">
+            <h2 class="section-title">4. Your information</h2>
+            <div class="field-grid">
+              <div>
+                <label for="name">Name <span class="required">*</span></label>
+                <input id="name" name="name" autocomplete="name" required />
+              </div>
+              <div>
+                <label for="email">Email <span class="required">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div>
+                <label for="phone">Phone <span class="required">*</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+              </div>
+              <div>
+                <label for="vehicle">Vehicle <span class="required">*</span></label>
+                <input id="vehicle" name="vehicle" placeholder="Example: 2022 Honda Accord" required />
+              </div>
+            </div>
+
+            <div style="margin-top:12px;">
+              <label for="location">Service address / location</label>
+              <input id="location" name="location" autocomplete="street-address" placeholder="Where should the detail take place?" />
+            </div>
+
+            <div style="margin-top:12px;">
+              <label for="notes">Notes</label>
+              <textarea id="notes" name="notes" placeholder="Pet hair, stains, special requests, gate instructions, etc."></textarea>
+            </div>
+
+            <button class="book-btn" id="bookBtn" type="submit">Book Appointment</button>
+            <div class="message" id="message" role="status"></div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const SERVICES = [
+      { id: 'shell-shine-basic', name: 'Shell Shine Basic', price: '$70+', duration: 60, details: ['Exterior hand wash', 'Tire shine', 'Interior vacuum', 'Windows cleaned'] },
+      { id: 'exterior-detail', name: 'Exterior Detail', price: '$50–$80', duration: 90, details: ['Exterior hand wash', 'Wheel cleaning', 'Tire dressing', 'Exterior windows', 'Clean finish and shine'] },
+      { id: 'interior-detail', name: 'Interior Detail', price: '$100+', duration: 120, details: ['Interior vacuum', 'Door panels', 'Cup holders & vents', 'Interior windows', 'Seats, floors, and panels cleaned'] },
+      { id: 'full-detail', name: 'Full Detail', price: '$150–$180', duration: 180, details: ['Interior detail included', 'Exterior detail included', 'Mat cleaning', 'Light stain treatment'] },
+      { id: 'golden-shell-pack', name: 'Golden Shell Pack', price: '$300', duration: 240, details: ['Everything in Full Detail', 'Clay bar treatment', 'Paint decontamination', 'Premium sealant'] }
+    ];
+
+    const serviceGrid = document.getElementById('serviceGrid');
+    const dateInput = document.getElementById('bookingDate');
+    const timesEl = document.getElementById('times');
+    const form = document.getElementById('bookingForm');
+    const bookBtn = document.getElementById('bookBtn');
+    const messageEl = document.getElementById('message');
+    const summaryService = document.getElementById('summaryService');
+    const summaryPrice = document.getElementById('summaryPrice');
+    const summaryDetails = document.getElementById('summaryDetails');
+    const summaryWhen = document.getElementById('summaryWhen');
+
+    let selectedService = null;
+    let selectedStart = null;
+
+    function localDateString(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+
+    const today = new Date();
+    dateInput.min = localDateString(today);
+    const maxDate = new Date(today);
+    maxDate.setDate(maxDate.getDate() + 60);
+    dateInput.max = localDateString(maxDate);
+
+    function renderServices() {
+      serviceGrid.innerHTML = SERVICES.map(service => `
+        <button type="button" class="service-btn" data-service="${service.id}">
+          <span class="service-name">${service.name}</span>
+          <span class="service-price">${service.price}</span>
+        </button>
+      `).join('');
+
+      serviceGrid.querySelectorAll('.service-btn').forEach(button => {
+        button.addEventListener('click', () => selectService(button.dataset.service));
+      });
+    }
+
+    function selectService(id) {
+      selectedService = SERVICES.find(s => s.id === id);
+      selectedStart = null;
+
+      document.querySelectorAll('.service-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.service === id);
+      });
+
+      summaryService.textContent = selectedService.name;
+      summaryPrice.textContent = `${selectedService.price} • about ${formatDuration(selectedService.duration)}`;
+      summaryDetails.innerHTML = selectedService.details.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+      summaryWhen.textContent = '';
+
+      const url = new URL(window.location.href);
+      url.searchParams.set('service', id);
+      history.replaceState({}, '', url);
+
+      if (dateInput.value) loadAvailability();
+    }
+
+    function formatDuration(minutes) {
+      if (minutes < 60) return `${minutes} min`;
+      const hours = minutes / 60;
+      return Number.isInteger(hours) ? `${hours} hr${hours === 1 ? '' : 's'}` : `${hours} hrs`;
+    }
+
+    async function loadAvailability() {
+      selectedStart = null;
+      summaryWhen.textContent = '';
+
+      if (!selectedService || !dateInput.value) {
+        timesEl.innerHTML = '<div class="empty">Select a service and date to see available times.</div>';
+        return;
+      }
+
+      timesEl.innerHTML = '<div class="loading">Checking the calendar…</div>';
+
+      try {
+        const params = new URLSearchParams({
+          date: dateInput.value,
+          service: selectedService.id
+        });
+        const response = await fetch(`/api/availability?${params}`);
+        const data = await response.json();
+
+        if (!response.ok) throw new Error(data.error || 'Could not load availability.');
+
+        if (!data.slots.length) {
+          timesEl.innerHTML = '<div class="empty">No available times for this date. Please choose another day.</div>';
+          return;
+        }
+
+        timesEl.innerHTML = data.slots.map(slot => `
+          <button type="button" class="time-btn" data-start="${slot.start}" data-label="${slot.label}">${slot.label}</button>
+        `).join('');
+
+        timesEl.querySelectorAll('.time-btn').forEach(button => {
+          button.addEventListener('click', () => {
+            selectedStart = button.dataset.start;
+            timesEl.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const dateLabel = new Date(`${dateInput.value}T12:00:00`).toLocaleDateString('en-US', {
+              weekday: 'long', month: 'long', day: 'numeric'
+            });
+            summaryWhen.textContent = `${dateLabel} at ${button.dataset.label}`;
+          });
+        });
+      } catch (error) {
+        timesEl.innerHTML = `<div class="empty">${escapeHtml(error.message)}</div>`;
+      }
+    }
+
+    function showMessage(type, text) {
+      messageEl.className = `message show ${type}`;
+      messageEl.textContent = text;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    dateInput.addEventListener('change', loadAvailability);
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      messageEl.className = 'message';
+
+      if (!selectedService) {
+        showMessage('error', 'Please choose a service.');
+        return;
+      }
+
+      if (!dateInput.value || !selectedStart) {
+        showMessage('error', 'Please choose an available date and time.');
+        return;
+      }
+
+      const payload = {
+        service: selectedService.id,
+        start: selectedStart,
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        vehicle: document.getElementById('vehicle').value.trim(),
+        location: document.getElementById('location').value.trim(),
+        notes: document.getElementById('notes').value.trim()
+      };
+
+      bookBtn.disabled = true;
+      bookBtn.textContent = 'Booking…';
+
+      try {
+        const response = await fetch('/api/book', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || 'Booking failed.');
+
+        showMessage('success', `Booked! ${selectedService.name} is scheduled for ${data.displayTime}. A confirmation is now on the SoSlow Detailing calendar.`);
+        form.reset();
+        dateInput.min = localDateString(new Date());
+        selectedStart = null;
+        timesEl.innerHTML = '<div class="empty">Appointment booked successfully.</div>';
+        summaryWhen.textContent = data.displayTime;
+      } catch (error) {
+        showMessage('error', error.message);
+        if (dateInput.value) loadAvailability();
+      } finally {
+        bookBtn.disabled = false;
+        bookBtn.textContent = 'Book Appointment';
+      }
+    });
+
+    renderServices();
+
+    const requestedService = new URLSearchParams(window.location.search).get('service');
+    if (requestedService && SERVICES.some(s => s.id === requestedService)) {
+      selectService(requestedService);
+    }
+  </script>
+</body>
+</html>

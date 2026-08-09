@@ -1,0 +1,9 @@
+{
+  "name": "soslow-booking-system",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "googleapis": "latest",
+    "luxon": "latest"
+  }
+}
